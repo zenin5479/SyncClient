@@ -3,14 +3,14 @@ using System;
 using System.IO;
 using System.Net;
 
-namespace SketchOne
+namespace SyncClient
 {
    class Program
    {
       // Базовый URL сервера (укажите свой, если сервер на другом порту/хосте)
       private const string BaseUrl = "http://localhost:8080/";
 
-      static void Main(string[] args)
+      static void Main()
       {
          Console.WriteLine("Тестирование HTTP-сервера...\n");
 
