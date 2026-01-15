@@ -8,7 +8,7 @@ namespace SyncClient
    class Program
    {
       // Базовый URL сервера (укажите свой, если сервер на другом порту/хосте)
-      private const string BaseUrl = "http://127.0.0.1:8080";
+      private static string _baseUrl = "http://127.0.0.1:8080";
 
       static void Main()
       {
@@ -69,7 +69,7 @@ namespace SyncClient
          {
             try
             {
-               string response = client.DownloadString(BaseUrl + path);
+               string response = client.DownloadString(_baseUrl + path);
                return response;
             }
             catch (WebException webEx)
@@ -94,7 +94,7 @@ namespace SyncClient
             string json = JsonConvert.SerializeObject(data);
             try
             {
-               string response = client.UploadString(BaseUrl + path, "POST", json);
+               string response = client.UploadString(_baseUrl + path, "POST", json);
                return response;
             }
             catch (WebException webEx)
@@ -120,7 +120,7 @@ namespace SyncClient
             try
             {
                // WebClient не поддерживает PUT напрямую, используем UploadString с методом
-               string response = client.UploadString(BaseUrl + path, "PUT", json);
+               string response = client.UploadString(_baseUrl + path, "PUT", json);
                return response;
             }
             catch (WebException webEx)
@@ -141,7 +141,7 @@ namespace SyncClient
       {
          try
          {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(BaseUrl + path);
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(_baseUrl + path);
             // Прямое задание метода
             request.Method = "DELETE";
             using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
