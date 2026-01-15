@@ -67,12 +67,12 @@ namespace SyncClient
             Console.WriteLine("Ошибка: {0}", ex.Message);
          }
 
-         Console.WriteLine("\nТестирование завершено.");
+         Console.WriteLine("\nТестирование завершено");
       }
 
       private static string SendGet(string path)
       {
-         using (var client = new WebClient())
+         using (WebClient client = new WebClient())
          {
             try
             {
