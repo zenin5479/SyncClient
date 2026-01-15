@@ -49,13 +49,13 @@ namespace SyncClient
 
             // 6. DELETE — удалить запись
             Console.WriteLine("6. DELETE /user1 (удаление):");
-            var deleteResponse = SendDelete("/user1");
+            string deleteResponse = SendDelete("/user1");
             Console.WriteLine(deleteResponse);
             Console.WriteLine();
 
             // 7. GET — проверить удаление
             Console.WriteLine("7. GET /user1 (после удаления):");
-            var deletedUser1 = SendGet("/user1");
+            string deletedUser1 = SendGet("/user1");
             Console.WriteLine(deletedUser1);
             Console.WriteLine();
 
