@@ -18,7 +18,7 @@ namespace SyncClient
          {
             // 1. GET — получить все записи
             Console.WriteLine("1. GET / (все записи):");
-            var allData = SendGet("/");
+            string allData = SendGet("/");
             Console.WriteLine(allData);
             Console.WriteLine();
 
