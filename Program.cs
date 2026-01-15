@@ -95,18 +95,18 @@ namespace SyncClient
 
       private static string SendPost(string path, object data)
       {
-         using (var client = new WebClient())
+         using (WebClient client = new WebClient())
          {
             client.Headers[HttpRequestHeader.ContentType] = "application/json";
-            var json = JsonConvert.SerializeObject(data);
+            string json = JsonConvert.SerializeObject(data);
             try
             {
-               var response = client.UploadString(BaseUrl + path, "POST", json);
+               string response = client.UploadString(BaseUrl + path, "POST", json);
                return response;
             }
             catch (WebException webEx)
             {
-               using (var errorResponse = webEx.Response as HttpWebResponse)
+               using (HttpWebResponse errorResponse = (HttpWebResponse)webEx.Response)
                {
                   if (errorResponse != null)
                   {
