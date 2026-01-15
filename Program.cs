@@ -29,13 +29,11 @@ namespace SyncClient
             Console.WriteLine("3. GET /user1 (проверка создания):");
             string user1 = SendGet("/user1");
             Console.WriteLine(user1);
-            Console.WriteLine();
 
             // 4. PUT — обновить запись
             Console.WriteLine("4. PUT /user1 (обновление):");
             string putResponse = SendPut("/user1", new { name = "Bob Updated", age = 26 });
             Console.WriteLine(putResponse);
-            Console.WriteLine();
 
             // 5. GET — проверить обновление
             Console.WriteLine("5. GET /user1 (после обновления):");
