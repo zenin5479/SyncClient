@@ -24,7 +24,6 @@ namespace SyncClient
             Console.WriteLine("2. POST /user1 (создание):");
             string postResponse = SendPost("/user1", new { name = "Bob", age = 25 });
             Console.WriteLine(postResponse);
-            Console.WriteLine();
 
             // 3. GET — получить конкретную запись
             Console.WriteLine("3. GET /user1 (проверка создания):");
