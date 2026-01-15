@@ -61,7 +61,7 @@ namespace SyncClient
 
             // 8. GET — снова все записи (должно быть пусто)
             Console.WriteLine("8. GET / (после удаления):");
-            var finalData = SendGet("/");
+            string finalData = SendGet("/");
             Console.WriteLine(finalData);
          }
          catch (Exception ex)
