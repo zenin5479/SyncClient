@@ -25,7 +25,7 @@ namespace SyncClient
             // 2. POST — создать запись
             Console.WriteLine("2. POST /user1 (создание):");
             var postData = new { name = "Bob", age = 25 };
-            var postResponse = SendPost("/user1", postData);
+            string postResponse = SendPost("/user1", postData);
             Console.WriteLine(postResponse);
             Console.WriteLine();
 
