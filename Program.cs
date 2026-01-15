@@ -151,7 +151,7 @@ namespace SyncClient
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(BaseUrl + path);
             // Прямое задание метода
             request.Method = "DELETE";
-            using (var response = (HttpWebResponse)request.GetResponse())
+            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
             {
                if (response.StatusCode == HttpStatusCode.NoContent ||
                    response.StatusCode == HttpStatusCode.OK)
@@ -161,10 +161,12 @@ namespace SyncClient
                }
 
                // Читаем тело ответа, если оно есть
-               using (var stream = response.GetResponseStream())
-               using (var reader = new StreamReader(stream))
+               using (Stream stream = response.GetResponseStream())
                {
-                  return reader.ReadToEnd();
+                  using (StreamReader reader = new StreamReader(stream))
+                  {
+                     return reader.ReadToEnd();
+                  }
                }
             }
          }
