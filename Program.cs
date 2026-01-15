@@ -19,7 +19,6 @@ namespace SyncClient
             Console.WriteLine("1. GET / (все записи):");
             string allData = SendGet("/");
             Console.WriteLine(allData);
-            Console.WriteLine();
 
             // 2. POST — создать запись
             Console.WriteLine("2. POST /user1 (создание):");
