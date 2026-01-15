@@ -76,12 +76,12 @@ namespace SyncClient
          {
             try
             {
-               var response = client.DownloadString(BaseUrl + path);
+               string response = client.DownloadString(BaseUrl + path);
                return response;
             }
             catch (WebException webEx)
             {
-               using (var errorResponse = webEx.Response as HttpWebResponse)
+               using (HttpWebResponse errorResponse = webEx.Response as HttpWebResponse)
                {
                   if (errorResponse != null)
                   {
