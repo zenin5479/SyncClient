@@ -44,13 +44,11 @@ namespace SyncClient
             Console.WriteLine("6. DELETE /user1 (удаление):");
             string deleteResponse = SendDelete("/user1");
             Console.WriteLine(deleteResponse);
-            Console.WriteLine();
 
             // 7. GET — проверить удаление
             Console.WriteLine("7. GET /user1 (после удаления):");
             string deletedUser1 = SendGet("/user1");
             Console.WriteLine(deletedUser1);
-            Console.WriteLine();
 
             // 8. GET — снова все записи (должно быть пусто)
             Console.WriteLine("8. GET / (после удаления):");
@@ -62,7 +60,7 @@ namespace SyncClient
             Console.WriteLine("Ошибка: {0}", ex.Message);
          }
 
-         Console.WriteLine("Тестирование завершено");
+         Console.WriteLine("Тестирование завершено!");
       }
 
       private static string SendGet(string path)
