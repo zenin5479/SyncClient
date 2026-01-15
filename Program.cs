@@ -148,9 +148,9 @@ namespace SyncClient
       {
          try
          {
-            var request = (HttpWebRequest)WebRequest.Create(BaseUrl + path);
-            request.Method = "DELETE"; // Прямое задание метода
-
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(BaseUrl + path);
+            // Прямое задание метода
+            request.Method = "DELETE";
             using (var response = (HttpWebResponse)request.GetResponse())
             {
                if (response.StatusCode == HttpStatusCode.NoContent ||
