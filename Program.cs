@@ -172,7 +172,7 @@ namespace SyncClient
          }
          catch (WebException webEx)
          {
-            using (var errorResponse = webEx.Response as HttpWebResponse)
+            using (HttpWebResponse errorResponse = webEx.Response as HttpWebResponse)
             {
                if (errorResponse != null)
                {
