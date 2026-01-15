@@ -64,7 +64,7 @@ namespace SyncClient
          }
          catch (Exception ex)
          {
-            Console.WriteLine($"Ошибка: {ex.Message}");
+            Console.WriteLine("Ошибка: {0}", ex.Message);
          }
 
          Console.WriteLine("\nТестирование завершено.");
