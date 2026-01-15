@@ -85,10 +85,10 @@ namespace SyncClient
                {
                   if (errorResponse != null)
                   {
-                     return $"Ошибка {errorResponse.StatusCode}: {webEx.Message}";
+                     return string.Format("Ошибка {0}: {1}", errorResponse.StatusCode, webEx.Message);
                   }
                }
-               return $"Ошибка: {webEx.Message}";
+               return string.Format("Ошибка: {0}", webEx.Message);
             }
          }
       }
