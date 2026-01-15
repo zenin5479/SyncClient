@@ -39,7 +39,6 @@ namespace SyncClient
             Console.WriteLine("5. GET /user1 (после обновления):");
             string updatedUser1 = SendGet("/user1");
             Console.WriteLine(updatedUser1);
-            Console.WriteLine();
 
             // 6. DELETE — удалить запись
             Console.WriteLine("6. DELETE /user1 (удаление):");
