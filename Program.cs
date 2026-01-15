@@ -12,7 +12,7 @@ namespace SyncClient
 
       static void Main()
       {
-         Console.WriteLine("Тестирование сервера\n");
+         Console.WriteLine("Тестирование сервера");
          try
          {
             // 1. GET — получить все записи
@@ -67,7 +67,7 @@ namespace SyncClient
             Console.WriteLine("Ошибка: {0}", ex.Message);
          }
 
-         Console.WriteLine("\nТестирование завершено");
+         Console.WriteLine("Тестирование завершено");
       }
 
       private static string SendGet(string path)
