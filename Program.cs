@@ -153,8 +153,13 @@ namespace SyncClient
             request.Method = "DELETE";
             using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
             {
-               if (response.StatusCode == HttpStatusCode.NoContent ||
-                   response.StatusCode == HttpStatusCode.OK)
+               if (response.StatusCode == HttpStatusCode.NoContent)
+               {
+                  // Если ответ пустой (204) или успешный (200)
+                  return "{\"success\": true}";
+               }
+
+               if (response.StatusCode == HttpStatusCode.OK)
                {
                   // Если ответ пустой (204) или успешный (200)
                   return "{\"success\": true}";
@@ -163,9 +168,12 @@ namespace SyncClient
                // Читаем тело ответа, если оно есть
                using (Stream stream = response.GetResponseStream())
                {
-                  using (StreamReader reader = new StreamReader(stream))
+                  if (stream != null)
                   {
-                     return reader.ReadToEnd();
+                     using (StreamReader reader = new StreamReader(stream))
+                     {
+                        return reader.ReadToEnd();
+                     }
                   }
                }
             }
@@ -179,10 +187,11 @@ namespace SyncClient
                   return string.Format("Ошибка {0}: {1}", errorResponse.StatusCode, webEx.Message);
                }
             }
+
             return string.Format("Ошибка: {0}", webEx.Message);
          }
+
+         return null;
       }
-
-
    }
 }
