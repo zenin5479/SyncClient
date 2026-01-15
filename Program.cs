@@ -12,7 +12,7 @@ namespace SyncClient
 
       static void Main()
       {
-         Console.WriteLine("Тестирование HTTP-сервера...\n");
+         Console.WriteLine("Тестирование сервера\n");
          try
          {
             // 1. GET — получить все записи
