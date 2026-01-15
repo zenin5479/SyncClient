@@ -43,7 +43,7 @@ namespace SyncClient
 
             // 5. GET — проверить обновление
             Console.WriteLine("5. GET /user1 (после обновления):");
-            var updatedUser1 = SendGet("/user1");
+            string updatedUser1 = SendGet("/user1");
             Console.WriteLine(updatedUser1);
             Console.WriteLine();
 
