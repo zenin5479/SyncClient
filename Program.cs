@@ -31,14 +31,14 @@ namespace SyncClient
 
             // 3. GET — получить конкретную запись
             Console.WriteLine("3. GET /user1 (проверка создания):");
-            var user1 = SendGet("/user1");
+            string user1 = SendGet("/user1");
             Console.WriteLine(user1);
             Console.WriteLine();
 
             // 4. PUT — обновить запись
             Console.WriteLine("4. PUT /user1 (обновление):");
             var putData = new { name = "Bob Updated", age = 26 };
-            var putResponse = SendPut("/user1", putData);
+            string putResponse = SendPut("/user1", putData);
             Console.WriteLine(putResponse);
             Console.WriteLine();
 
