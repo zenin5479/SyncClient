@@ -23,7 +23,7 @@ namespace SyncClient
 
             // 2. POST — создать запись
             Console.WriteLine("2. POST /user1 (создание):");
-            var postData = new { name = "Bob", age = 25 };
+            //var postData = new { name = "Bob", age = 25 };
             string postResponse = SendPost("/user1", new { name = "Bob", age = 25 });
             Console.WriteLine(postResponse);
             Console.WriteLine();
@@ -36,8 +36,8 @@ namespace SyncClient
 
             // 4. PUT — обновить запись
             Console.WriteLine("4. PUT /user1 (обновление):");
-            var putData = new { name = "Bob Updated", age = 26 };
-            string putResponse = SendPut("/user1", putData);
+            //var putData = new { name = "Bob Updated", age = 26 };
+            string putResponse = SendPut("/user1", new { name = "Bob Updated", age = 26 });
             Console.WriteLine(putResponse);
             Console.WriteLine();
 
