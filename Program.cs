@@ -8,7 +8,7 @@ namespace SyncClient
    class Program
    {
       // Базовый URL сервера (укажите свой, если сервер на другом порту/хосте)
-      private const string BaseUrl = "http://localhost:8080/";
+      public static string BaseUrl = "http://localhost:8080/";
 
       static void Main()
       {
