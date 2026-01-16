@@ -49,7 +49,7 @@ namespace SyncClient
             Console.WriteLine("7. GET /user1 (после удаления):");
             string deletedUser1 = SendGet("/user1");
             Console.WriteLine(deletedUser1);
-
+            
             // 8. GET — снова все записи (должно быть пусто)
             Console.WriteLine("8. GET / (после удаления):");
             string finalData = SendGet("/");
